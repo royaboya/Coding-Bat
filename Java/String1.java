@@ -225,7 +225,7 @@ public class String1 {
      * the last char of b, so "yo" and "java" yields "ya". If either string is
      * length 0, use '@' for its missing char.
      */
-    public String lastChars(String a, String b) { // this is ugly
+    public String lastChars(String a, String b) {
         String str1 = "";
         String str2 = "";
         if (a.length() == 0) {
@@ -240,6 +240,115 @@ public class String1 {
         }
         return str1 + str2;
 
+    }
+
+    /**
+     * Given two strings, append them together (known as "concatenation") and return
+     * the result. However, if the concatenation creates a double-char, then omit
+     * one of the chars, so "abc" and "cat" yields "abcat".
+     * 
+     */
+    public String conCat(String a, String b) {
+        if (a.length() == 0 || b.length() == 0) {
+            return a + b;
+        }
+
+        if (a.substring(a.length() - 1).equals(b.substring(0, 1))) {
+            return a.substring(0, a.length() - 1) + b;
+        }
+
+        return a + b;
+    }
+
+    /**
+     * Given a string of any length, return a new string where the last 2 chars, if
+     * present, are swapped, so "coding" yields "codign".
+     */
+    public String lastTwo(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+
+        String last = str.substring(str.length() - 1);
+        String first = str.substring(str.length() - 2, str.length() - 1);
+        return str.substring(0, str.length() - 2) + last + first;
+    }
+
+    /**
+     * Given a string, if the string begins with "red" or "blue" return that color
+     * string, otherwise return the empty string.
+     */
+    public String seeColor(String str) {
+        if (str.startsWith("red")) {
+            return "red";
+        } else if (str.startsWith("blue")) {
+            return "blue";
+        } else {
+            return "";
+        }
+
+    }
+
+    /**
+     * Given a string, return true if the first 2 chars in the string also appear at
+     * the end of the string, such as with "edited".
+     */
+    public boolean frontAgain(String str) {
+        if (str.length() < 2) {
+            return false;
+        }
+        return str.substring(0, 2).equals(str.substring(str.length() - 2));
+    }
+
+    /**
+     * Given two strings, append them together (known as "concatenation") and return
+     * the result. However, if the strings are different lengths, omit chars from
+     * the longer string so it is the same length as the shorter string. So "Hello"
+     * and "Hi" yield "loHi". The strings may be any length.
+     */
+
+    public String minCat(String a, String b) {
+        if(a.length() < b .length())
+        {
+          return a + b.substring(b.length() - a.length());
+        }
+        else if(b.length() < a.length())a
+        {
+          return a.substring(a.length() - b.length()) + b; 
+        }
+        return a + b;
+      }
+
+    /**
+     * Given a string, return a new string made of 3 copies of the first 2 chars of
+     * the original string. The string may be any length. If there are fewer than 2
+     * chars, use whatever is there.
+     * 
+     */
+    public String extraFront(String str) {
+        if (str.length() < 2) {
+            return str + str + str;
+        }
+
+        String firstTwo = str.substring(0, 2);
+        return firstTwo + firstTwo + firstTwo;
+    }
+
+    /**
+     * Given a string, if a length 2 substring appears at both its beginning and
+     * end, return a string without the substring at the beginning, so "HelloHe"
+     * yields "lloHe". The substring may overlap with itself, so "Hi" yields "".
+     * Otherwise, return the original string unchanged.
+     */
+    public String without2(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+
+        if (str.substring(0, 2).equals(str.substring(str.length() - 2))) {
+            return str.substring(2);
+        }
+        return str;
     }
 
 }

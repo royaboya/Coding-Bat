@@ -1,2 +1,2 @@
 # Coding Bat Solutions
-## My solutions, they could be better though
+My solutions, they could be better though

@@ -312,12 +312,13 @@ public class String1 {
         {
           return a + b.substring(b.length() - a.length());
         }
-        else if(b.length() < a.length())a
+        else if(b.length() < a.length())
         {
           return a.substring(a.length() - b.length()) + b; 
         }
         return a + b;
       }
+      
 
     /**
      * Given a string, return a new string made of 3 copies of the first 2 chars of
